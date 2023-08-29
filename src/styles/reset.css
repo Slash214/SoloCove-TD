@@ -1,0 +1,18 @@
+@font-face {
+    font-family: '阿里巴巴普惠体 2.0 55 Regular';
+    font-weight: 400;
+    src: url('//at.alicdn.com/wf/webfont/Lgg3muGDiKJC/biSwGugU5u5w.woff2') format('woff2'),
+        url('//at.alicdn.com/wf/webfont/Lgg3muGDiKJC/bNqblTbUCA6u.woff') format('woff');
+    font-display: swap;
+}
+
+*,*::after,*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: '阿里巴巴普惠体 2.0 55 Regular', sans-serif;
+}
