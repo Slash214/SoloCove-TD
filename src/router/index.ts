@@ -1,12 +1,13 @@
 import { createRouter, createWebHashHistory, Router, RouteRecordRaw } from "vue-router";
 import Layout from "@/layout/index.vue"
-import { Test, System } from './models'
+import { Test, System, Element } from './models'
 import { Storage } from '@/utils/cache'
+import NProgress from "@/utils/nprogress";
 
 const routes: Array<RouteRecordRaw> = [
 	{
 		path: '/',
-		meta: { title: '首页', icon: 'add' },
+		meta: { title: '首页', icon: 'dashboard' },
 		component: Layout,
 		redirect: '/index',
 		children: [{
@@ -14,6 +15,7 @@ const routes: Array<RouteRecordRaw> = [
 			component: () => import('@/views/main/index.vue'),
 		}]
 	},
+	...Element,
 	...System,
 	...Test
 ]
@@ -30,7 +32,7 @@ const token = Storage.getItem('token')
 console.log('token', token)
 
 router.beforeEach((to, __from, next) => {
-	// NProgress.start()
+	NProgress.start()
 	document.title = (to.meta.title as string) || import.meta.env.BASE_URL
 	if (token) {
 		if (to.path === '/login') {
@@ -43,7 +45,7 @@ router.beforeEach((to, __from, next) => {
 })
 
 router.afterEach((to, __from) => {
-	// NProgress.done()
+	NProgress.done()
 })
 
 export default router

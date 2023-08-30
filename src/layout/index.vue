@@ -1,44 +1,44 @@
 <template>
     <t-layout class="layout">
-        <t-aside style="height: 100vh">
-            <t-aside>
-                <t-menu theme="light" :collapsed="collapsed" default-value="2-1">
-                    <template #logo>
-                        <div class="logo-text">SOLOCOVE</div>
-                    </template>
-                    <MenuContent
-                        v-for="(items, idx) in menuRoutes"
-                        :key="idx"
-                        :route-menu="items"
-                    ></MenuContent>
-                    <!-- <template #operations>
-                        <t-button
-                            class="t-demo-collapse-btn"
-                            variant="text"
-                            shape="square"
-                            @click="changeCollapsed"
-                        >
-                            <span>收起</span>
-                        </t-button>
-                    </template> -->
-                </t-menu>
-            </t-aside>
+        <t-aside :style="genWidth">
+            <t-menu :collapsed="collapsed" default-value="首页">
+                <template #logo>
+                    <div class="logo-text">
+                        {{ collapsed ? 'SC' : 'SOLOCOVE' }}
+                    </div>
+                </template>
+                <MenuContent
+                    v-for="(items, idx) in menuRoutes"
+                    :key="idx"
+                    :route-menu="items"
+                ></MenuContent>
+                <template #operations>
+                    <t-button
+                        class="t-demo-collapse-btn"
+                        variant="text"
+                        shape="square"
+                        @click="changeCollapsed"
+                    >
+                        <template #icon><t-icon :name="iconName" /></template>
+                    </t-button>
+                </template>
+            </t-menu>
         </t-aside>
+
         <t-layout>
             <t-header>
-                <t-head-menu value="item1" height="120px">
-                    <template #logo> </template>
-                    <!-- <div>我是标题</div> -->
+                <t-head-menu class="head-menu" height="120px">
                     <template #operations>
-                        <a href="javascript:;"
+                        <a class="finger"
                             ><t-icon class="t-menu__operations-icon" name="search"
                         /></a>
-                        <a href="javascript:;"
-                            ><t-icon class="t-menu__operations-icon" name="notification-filled"
-                        /></a>
-                        <a href="javascript:;"
+                        <a @click="backHomePage" class="finger"
                             ><t-icon class="t-menu__operations-icon" name="home"
                         /></a>
+                        <a @click="logout" class="finger"
+                            ><t-icon class="t-menu__operations-icon" name="logout"
+                        /></a>
+                        <t-avatar size="medium" image="https://tdesign.gtimg.com/site/avatar.jpg" />
                     </template>
                 </t-head-menu>
             </t-header>
@@ -49,20 +49,30 @@
             </t-layout>
         </t-layout>
     </t-layout>
+
+    <t-dialog
+        v-model:visible="visible"
+        header="退出登陆"
+        body="你确认要退出登陆吗？"
+        attach="body"
+        :confirm-on-enter="true"
+        :on-confirm="onConfirmAnother"
+    />
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import MenuContent from './module/MenuContent.vue'
+import { Storage } from '@/utils/cache'
 
 import { MenuRoute } from '@/typings/menu'
 
 const router = useRouter()
 let menuRoutes = ref<any>()
+let visible = ref(false)
 
 onMounted(() => {})
-
 const collapsed = ref(false)
 
 type ListItemType = MenuRoute & { icon?: string }
@@ -101,9 +111,26 @@ onMounted(() => {
     menuRoutes.value = getMenuList(list)
     console.warn('格式了的路由表', menuRoutes.value)
 })
-// const changeCollapsed = () => {
-//     collapsed.value = !collapsed.value
-// }
+
+const iconName = computed(() => (collapsed.value ? 'chevron-right' : 'chevron-left'))
+const genWidth = computed(() => (collapsed.value ? 'width: 70px' : 'width: 232px'))
+
+const changeCollapsed = () => {
+    collapsed.value = !collapsed.value
+}
+
+const logout = () => {
+    visible.value = !visible.value
+}
+
+const backHomePage = () => {
+    router.push({ path: '/' })
+}
+
+const onConfirmAnother = () => {
+    Storage.clearAll()
+    location.reload()
+}
 </script>
 
 <style lang="scss">
@@ -114,11 +141,15 @@ onMounted(() => {
     width: 100%;
     font-size: 32px;
     font-weight: 700;
+
     // background: linear-gradient(45deg, #ff6b6b, #2b8a3e);
     background: linear-gradient(45deg, #ff0000, #0000ff);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+}
+.head-menu {
+    padding: 0 20px;
 }
 .layout {
     width: 100vw;

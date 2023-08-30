@@ -19,6 +19,13 @@ export default defineConfig({
       })],
     })
   ],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import '@/styles/utils.scss';`
+      }
+    }
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

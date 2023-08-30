@@ -2,7 +2,7 @@
     <div class="container">
         <div class="login-box">
             <div class="left">
-                <img src="@/assets/light-photo.png" alt="" />
+                <img src="@/assets/images/light-photo.png" alt="" />
             </div>
             <div class="right">
                 <h4 class="title">欢迎登陆</h4>

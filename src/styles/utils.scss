@@ -1,0 +1,25 @@
+$spacing-sizes: (
+  1: 10px,
+  2: 20px,
+  3: 30px,
+  4: 40px,
+);
+
+$spacing-directions: (
+  't': 'top',
+  'b': 'bottom',
+  'l': 'left',
+  'r': 'right'
+);
+
+@each $size-key, $size-value in $spacing-sizes {
+  @each $direction-key, $direction-value in $spacing-directions {
+    .m#{$direction-key}#{$size-key} {
+      margin-#{$direction-value}: $size-value;
+    }
+
+    .p#{$direction-key}#{$size-key} {
+      padding-#{$direction-value}: $size-value;
+    }
+  }
+}

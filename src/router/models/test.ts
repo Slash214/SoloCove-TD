@@ -5,7 +5,7 @@ const Test: Array<RouteRecordRaw> = [
 	{
 		path: '/test',
 		component: layout,
-		meta: { title: '测试', icon: '',},
+		meta: { title: '测试', icon: 'system-code',},
 		redirect: '/test/test1',
 		children: [
 			{
@@ -31,7 +31,7 @@ const Test: Array<RouteRecordRaw> = [
 	{
 		path: '/code',
 		component: layout,
-		meta: { title: '封面', icon: '', },
+		meta: { title: '封面', icon: 'system-sum', },
 		redirect: '/code/test1',
 		children: [
 			{

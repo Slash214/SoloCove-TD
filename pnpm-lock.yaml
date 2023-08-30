@@ -5,18 +5,33 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@tinymce/tinymce-vue':
+    specifier: ^5.1.1
+    version: 5.1.1(vue@3.3.4)
   '@types/node':
     specifier: ^20.5.0
     version: 20.5.0
+  '@types/nprogress':
+    specifier: ^0.2.0
+    version: 0.2.0
+  '@types/tinymce':
+    specifier: ^4.6.5
+    version: 4.6.5
   axios:
     specifier: ^1.4.0
     version: 1.4.0
+  nprogress:
+    specifier: ^0.2.0
+    version: 0.2.0
   sass:
     specifier: ^1.65.1
     version: 1.65.1
   tdesign-vue-next:
     specifier: ^1.5.1
     version: 1.5.1(vue@3.3.4)
+  tinymce:
+    specifier: ^6.6.2
+    version: 6.6.2
   unplugin-auto-import:
     specifier: ^0.16.6
     version: 0.16.6
@@ -320,8 +335,23 @@ packages:
       picomatch: 2.3.1
     dev: false
 
+  /@tinymce/tinymce-vue@5.1.1(vue@3.3.4):
+    resolution: {integrity: sha512-iO57HOWesFOhsaqjA5Ea6sDvQBmJJH3/dq00Uvg7metlct2kLF+ctRgoDsetLt6gmeZ7COPftr814/XzqnJ/dg==}
+    peerDependencies:
+      vue: ^3.0.0
+    dependencies:
+      tinymce: 6.6.2
+      vue: 3.3.4
+    dev: false
+
   /@types/estree@1.0.1:
     resolution: {integrity: sha512-LG4opVs2ANWZ1TJoKc937iMmNstM/d0ae1vNbnBvBhqCSezgVUOzcLCqbI5elV8Vy6WKwKjaqR+zO9VKirBBCA==}
+    dev: false
+
+  /@types/jquery@3.5.17:
+    resolution: {integrity: sha512-U40tNEAGSTZ7R1OC6kGkD7f4TKW5DoVx6jd9kTB9mo5truFMi1m9Yohnw9kl1WpTPvDdj7zAw38LfCHSqnk5kA==}
+    dependencies:
+      '@types/sizzle': 2.3.3
     dev: false
 
   /@types/lodash@4.14.182:
@@ -331,12 +361,26 @@ packages:
   /@types/node@20.5.0:
     resolution: {integrity: sha512-Mgq7eCtoTjT89FqNoTzzXg2XvCi5VMhRV6+I2aYanc6kQCBImeNaAYRs/DyoVqk1YEUJK5gN9VO7HRIdz4Wo3Q==}
 
+  /@types/nprogress@0.2.0:
+    resolution: {integrity: sha512-1cYJrqq9GezNFPsWTZpFut/d4CjpZqA0vhqDUPFWYKF1oIyBz5qnoYMzR+0C/T96t3ebLAC1SSnwrVOm5/j74A==}
+    dev: false
+
+  /@types/sizzle@2.3.3:
+    resolution: {integrity: sha512-JYM8x9EGF163bEyhdJBpR2QX1R5naCJHC8ucJylJ3w9/CVBaskdQ8WqBf8MmQrd1kRvp/a4TS8HJ+bxzR7ZJYQ==}
+    dev: false
+
   /@types/sortablejs@1.15.1:
     resolution: {integrity: sha512-g/JwBNToh6oCTAwNS8UGVmjO7NLDKsejVhvE4x1eWiPTC3uCuNsa/TD4ssvX3du+MLiM+SHPNDuijp8y76JzLQ==}
     dev: false
 
   /@types/tinycolor2@1.4.3:
     resolution: {integrity: sha512-Kf1w9NE5HEgGxCRyIcRXR/ZYtDv0V8FVPtYHwLxl0O+maGX0erE77pQlD0gpP+/KByMZ87mOA79SjifhSB3PjQ==}
+    dev: false
+
+  /@types/tinymce@4.6.5:
+    resolution: {integrity: sha512-C5gdEi85rUeYEXzXlwAm9MzvfMI8SooVbBMLLN/BQTeDnHWNtRWAkB6ON9s0lhWZYrmjSgLPrWSe86rjciACEQ==}
+    dependencies:
+      '@types/jquery': 3.5.17
     dev: false
 
   /@types/validator@13.11.1:
@@ -796,6 +840,10 @@ packages:
     resolution: {integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==}
     engines: {node: '>=0.10.0'}
 
+  /nprogress@0.2.0:
+    resolution: {integrity: sha512-I19aIingLgR1fmhftnbWWO3dXc0hSxqHQHQb3H8m+K3TnEn/iSeTZZOyvKXWqQESMwuUVnatlCnZdLBZZt2VSA==}
+    dev: false
+
   /path-parse@1.0.7:
     resolution: {integrity: sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==}
     dev: false
@@ -945,6 +993,10 @@ packages:
 
   /tinycolor2@1.6.0:
     resolution: {integrity: sha512-XPaBkWQJdsf3pLKJV9p4qN/S+fm2Oj8AIPo1BTUhg5oxkvm9+SVEGFdhyOz7tTdUTfvxMiAs4sp6/eZO2Ew+pw==}
+    dev: false
+
+  /tinymce@6.6.2:
+    resolution: {integrity: sha512-ShoaznNP3qI8dPtEnYt3ByhAJfMhzIY1K04CoFu1IPDeAxmAZCUJLgfiplo8etP4wN8zrBIxHEqpwYYb2IllOQ==}
     dev: false
 
   /to-fast-properties@2.0.0:

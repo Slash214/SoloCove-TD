@@ -2,7 +2,8 @@
     <div>
         <t-menu-item v-if="!props.routeMenu.haveSon" :value="routeMenu.title" :to="routeMenu.path">
             <template #icon>
-                <t-icon name="dashboard" />
+                <!-- <t-icon :name="dashboard" /> -->
+                <t-icon :name="routeMenu.icon" />
             </template>
             <span>
                 {{ routeMenu.title }}
@@ -10,7 +11,7 @@
         </t-menu-item>
         <t-submenu v-else :value="routeMenu.title" :to="routeMenu.path">
             <template #icon>
-                <t-icon name="mail" />
+                <t-icon :name="routeMenu.icon" />
             </template>
             <template #title>
                 <span>{{ routeMenu.title }}</span>
