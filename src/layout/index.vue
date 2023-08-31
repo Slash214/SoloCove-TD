@@ -65,7 +65,6 @@ import { ref, onMounted, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import MenuContent from './module/MenuContent.vue'
 import { Storage } from '@/utils/cache'
-
 import { MenuRoute } from '@/typings/menu'
 
 const router = useRouter()
@@ -134,6 +133,19 @@ const onConfirmAnother = () => {
 </script>
 
 <style lang="scss">
+.layout {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    .layout-content {
+        padding: 20px;
+        overflow-y: scroll;
+        .bg-white {
+            padding: 20px;
+            background-color: #fff;
+        }
+    }
+}
 .logo-text {
     display: flex;
     align-items: center;
@@ -141,8 +153,6 @@ const onConfirmAnother = () => {
     width: 100%;
     font-size: 32px;
     font-weight: 700;
-
-    // background: linear-gradient(45deg, #ff6b6b, #2b8a3e);
     background: linear-gradient(45deg, #ff0000, #0000ff);
     -webkit-background-clip: text;
     background-clip: text;
@@ -150,15 +160,5 @@ const onConfirmAnother = () => {
 }
 .head-menu {
     padding: 0 20px;
-}
-.layout {
-    width: 100vw;
-    height: 100vh;
-    .layout-content {
-        padding: 20px;
-        .bg-white {
-            background-color: #fff;
-        }
-    }
 }
 </style>

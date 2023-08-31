@@ -1,7 +1,7 @@
 
 
 <div align="center">
-<h1> vue-solo-cove </h1>
+<h1> vue3-solo-cove </h1>
 </div>
 
 # SoloCove
@@ -23,9 +23,11 @@
 如你未安装pnpm 可以使用npm i -g pnpm 安装
 
 # 克隆项目
-git clone -b https://github.com/Slash214/solocove.git
+git clone -b https://github.com/Slash214/SoloCove.git
 # 进入项目目录
 cd solocove
+
+
 # 安装依赖
 pnpm i
 # 本地开发 启动项目

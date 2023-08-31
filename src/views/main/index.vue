@@ -1,15 +1,16 @@
 <template>
-	<div class="main">
-		欢迎来到我的SOLOCOVE 后台
-	</div>
+    <div class="main">
+        <h4 class="title">欢迎来到我的SOLOCOVE 后台</h4>
+    </div>
 </template>
 
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <style scoped lang="scss">
 .main {
-	padding: 20px;
+	.title {
+		font-weight: 700;
+		font-size: 36px;
+	}
 }
 </style>

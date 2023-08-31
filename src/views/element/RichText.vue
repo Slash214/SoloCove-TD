@@ -24,7 +24,6 @@ const updateContent = () => {
 
 <style scoped lang="scss">
 .container {
-    padding: 20px;
     .options {
         margin-bottom: 20px;
     }
