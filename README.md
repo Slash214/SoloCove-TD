@@ -1,32 +1,35 @@
-
-
 <div align="center">
-<h1> vue3-solo-cove </h1>
+<h1> VUE3-SoloCove-TD </h1>
 </div>
 
 # SoloCove
-结合了“Solo”（个人、独自）和“Cove”（小海湾、角落），适用于个人小众领域，自己的喜爱，
-后续会有两个版本一个Element-Plus的和一个Tdesign-vue-next，只支持vue3
+结合了“Solo”（个人、独自）和“Cove”（小海湾、角落），适用于个人小众领域，自己的喜爱，没有更多的封装
+方便小伙伴们二次定制。简单易上手，配置了基础的路由设置。目前有两个版本一个Element-Plus的和一个Tdesign-vue-next
+只支持vue3
+
 
 ## 语言
 [中文](./README.md) | [English](./README_en.md)
 
 ## 演示地址
 
-- [🎉 vue3.x + Vite4 + TypeScript + Tdesign-Vue-Next（免费商用，支持 PC）]()
-- [🎉 vue3.x + Vite4 + TypeScript + Element-Plus（免费商用，支持 PC）]()
+-- 等待发布....
+
+## 项目地址
+- [🎉 vue3.x + Vite4 + TypeScript + Tdesign-Vue-Next（免费商用，支持 PC）](https://github.com/Slash214/SoloCove-TD.git)
+- [🎉 vue3.x + Vite4 + TypeScript + Element-Plus（免费商用，支持 PC）](https://github.com/Slash214/SoloCove-El.git)
 
 ## 🌱 vue3.x 下载
 ```bash
 # 备注
 项目使用的pnpm包管理
+
 如你未安装pnpm 可以使用npm i -g pnpm 安装
 
 # 克隆项目
-git clone -b https://github.com/Slash214/SoloCove.git
+git clone -b https://github.com/Slash214/SoloCove-TD.git
 # 进入项目目录
-cd solocove
-
+cd SoloCove-TD
 
 # 安装依赖
 pnpm i
@@ -34,11 +37,12 @@ pnpm i
 pnpm run dev
 ```
 
+
 ## 鸣谢
 | Project                                                          |
 | ---------------------------------------------------------------- |
 | [vue](https://github.com/vuejs/vue)                              |              
-| [element-plus](https://github.com/element-plus/element-plus)     |
+| [tdesign-vue-next](https://github.com/Tencent/tdesign-vue-next)     |
 | [vite](https://cn.vitejs.dev/guide/)                             |
 | [mock](https://github.com/nuysoft/Mock)                          |
 | [axios](https://github.com/axios/axios)                          |
@@ -63,4 +67,4 @@ pnpm run dev
 
 
 ## last
-个人开发模板项目，后续持续维护！后续会有Element-ui框架的
+个人开发模板项目，后续持续维护！
